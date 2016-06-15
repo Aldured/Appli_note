@@ -39,9 +39,15 @@ User.prototype.newnote = function(newnote){
 		this.note.push(newnote);
 	}
 	else {
-		var tabnote=(follownote-1);
+		var tabnote=parseInt(follownote)-1;
 		this.note[tabnote]=newnote;
 	}
 }
 
+User.prototype.erasenote = function(){
+
+	var tabnote=parseInt(follownote)-1;
+	newUser.note.splice(tabnote,1);
+
+}
 

@@ -1,5 +1,5 @@
 var newUser;
-var  follownote=0;
+var follownote=0;
 
 //charge jquery
 $(document).ready(function(){
@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 		}
 		else{
-			$('#actualuser').html("Bonjour et bienvenue 	<strong>"+newUser.name+"</strong>");
+			$('#titlelistnote').html("Bonjour et bienvenue Dépositaire	<strong>"+newUser.name+"</strong>");
 			$('#connect').removeClass().addClass("cache");
 			$('#listnote').removeClass().addClass("visible");
 
@@ -42,7 +42,7 @@ $(document).ready(function(){
 	$(document).on("click", ".notelist",function(event){
 		event.preventDefault();
 
-			follownote=($(this).attr('id')+1)
+			follownote=(parseInt($(this).attr('id'))+1)
 			$('#titlenote').val(newUser.note[$(this).attr('id')][0]);
 			$('#textnote').val(newUser.note[$(this).attr('id')][1]);
 			$('#listnote').removeClass().addClass("cache");
@@ -53,6 +53,7 @@ $(document).ready(function(){
 	$('#viewnote').click(function(event){
 		event.preventDefault();
 
+			follownote=0;
 			$('#titlenote').val('');
 			$('#textnote').val('');
 			$('#listnote').removeClass().addClass("cache");
@@ -81,6 +82,32 @@ $(document).ready(function(){
 			curentnote.push(textnote);
 
 			newUser.newnote(curentnote);
+
+			$('#affichlistnote').children().remove();
+
+			for(var i=0;i<newUser.note.length;i++){
+
+							if (newUser.note[i]===null){
+								newUser.note.splice(i,1);
+								i--
+							}
+							else{
+								$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
+							}
+						}
+
+			$('#note').removeClass().addClass("cache");
+			$('#listnote').removeClass().addClass("visible");
+
+
+	}); //fin de fonction click
+
+	$('#erasenote').click(function(event){
+		event.preventDefault();
+
+			if(follownote>0){
+				newUser.erasenote();
+			}
 
 			$('#affichlistnote').children().remove();
 

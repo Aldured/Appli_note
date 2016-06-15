@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'halo';
+    src: url('../fonts/halo_outline-webfont.woff2') format('woff2'),
+         url('../fonts/halo_outline-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'halo';
+    src: url('../fonts/halo-webfont.woff2') format('woff2'),
+         url('../fonts/halo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
 body {
 
 	margin:0;/* par defaut il y a une marge definit au corp */
@@ -18,6 +38,11 @@ body {
 	justify-content: space-around;
 	font:2em "Segoe UI", "Helvetica Neue",Roboto,Arial,sans-serif;
 
+}
+
+h1 {
+	font:2em "halo","Segoe UI", "Helvetica Neue",Roboto,Arial,sans-serif;
+	align-items: center;
 }
 
 
@@ -56,7 +81,7 @@ label+ input{
 }
 
 ul{
-	margin:0;
+	padding:0;
 	list-style-type: none;
 }
 
