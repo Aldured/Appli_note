@@ -14,7 +14,7 @@
 	<input type='text' name="user" id="userconnect" value='Damien' placeholder="name">
 	<label for="passconnect">Votre Mot de passe :</label>
 	<input type='password' id="passconnect" value='222' placeholder="Votre mot de passe">
-	<input type='submit' id="btnconnect" value="connexion">
+	<button id="btnconnect">Entree dans le Domaine</button>
 
 </section>
 
@@ -22,21 +22,20 @@
 
 	<h1 class="titlelistnote"></h1>
 	<ul id="affichlistnote"></ul>
-	<div>
-	<input type='submit' value='Nouvelle note' id="viewnote">
-	<input type='submit' value='Deconnexion' id="deconnect">
-	</div>
+	<button id="viewnote">Nouvelle Entree du Domaine</button>
+	<button id="deconnect">Sortir du Domaine</button>
 
 </section>
 
 <section id="note">
 
-	<label for="titlenote">Titre de la note:</label>
-	<input type='text' id="titlenote">
-	<label for="textnote">Votre note:</label>
-	<input type='textarea' id="textnote">
 	<div>
-	<input type='submit' value="Enregistrer" id="validnote">
+	<label for="titlenote">Titre de l'Entree:</label>
+	<input type='text' id="titlenote">
+	</div>
+	<textarea id="textnote"></textarea>
+	<div>
+	<button id="validnote">Enregistrer dans le Domaine</button>
 	<button id="erasenote"><i class="fa fa-eraser" aria-hidden="true"></i></button>
 	</div>
 

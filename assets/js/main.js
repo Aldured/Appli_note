@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 		}
 		else{
-			$('#titlelistnote').html("Bonjour et bienvenue Dépositaire	<strong>"+newUser.name+"</strong>");
+			$('.titlelistnote').html("Bonjour et bienvenue Depositaire "+newUser.name);
 			$('#connect').removeClass().addClass("cache");
 			$('#listnote').removeClass().addClass("visible");
 
@@ -30,7 +30,10 @@ $(document).ready(function(){
 
 			for(var i=0;i<newUser.note.length;i++){
 
-				if (newUser.note[i]===null){}
+				if (newUser.note[i]===null){
+					newUser.note.splice(i,1);
+					i--;
+				}
 				else{
 					$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
 				}
@@ -89,7 +92,7 @@ $(document).ready(function(){
 
 							if (newUser.note[i]===null){
 								newUser.note.splice(i,1);
-								i--
+								i--;
 							}
 							else{
 								$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
@@ -113,7 +116,10 @@ $(document).ready(function(){
 
 			for(var i=0;i<newUser.note.length;i++){
 
-							if (newUser.note[i]===null){}
+							if (newUser.note[i]===null){
+								newUser.note.splice(i,1);
+								i--;
+							}
 							else{
 								$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
 							}
