@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Mes Notes</title>
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<section id="connect">
+
+	<h1 class="titleconnect">Connexion au Domaine</h1>
+	<label for="userconnect">Votre identifiant:</label>
+	<input type='text' name="user" id="userconnect" value='Damien' placeholder="name">
+	<label for="passconnect">Votre Mot de passe :</label>
+	<input type='password' id="passconnect" value='222' placeholder="Votre mot de passe">
+	<input type='submit' id="btnconnect" value="connexion">
+
+</section>
+
+<section id="listnote">
+
+	<h1 class="titlelistnote"></h1>
+	<div id="actualuser"></div>
+	<ul id="affichlistnote"></ul>
+	<div>
+	<input type='submit' value='Nouvelle note' id="viewnote">
+	<input type='submit' value='Deconnexion' id="deconnect">
+	</div>
+
+</section>
+
+<section id="note">
+
+	<label for="titlenote">Titre de la note:</label>
+	<input type='text' id="titlenote">
+	<label for="textnote">Votre note:</label>
+	<input type='textarea' id="textnote">
+	<input type='submit' id="validnote">
+
+</section>
+
+</body>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bdd.js"></script>
+<script src="assets/js/User.js"></script>
+<script src="assets/js/main.js"></script>
+</html>
