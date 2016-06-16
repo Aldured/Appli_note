@@ -51,3 +51,30 @@ User.prototype.erasenote = function(){
 
 }
 
+User.prototype.upnote = function(){
+
+	if(follownote>1){
+		var tabnote=parseInt(follownote)-1;
+		var prevnote=tabnote-1
+		newUser.note.push(newUser.note[tabnote]);
+		var lastindex=(newUser.note.length-1) ;
+		newUser.note[tabnote]=newUser.note[prevnote];
+		newUser.note[prevnote]=newUser.note[lastindex];
+		newUser.note.pop();
+	}
+}
+
+User.prototype.downnote = function(){
+
+	var lastindex=(newUser.note.length) ;
+	if(follownote<lastindex){
+		var tabnote=parseInt(follownote)-1;
+		var nextnote=tabnote+1
+		newUser.note.push(newUser.note[tabnote]);
+		lastindex=(newUser.note.length-1) ;
+		newUser.note[tabnote]=newUser.note[nextnote];
+		newUser.note[nextnote]=newUser.note[lastindex];
+		newUser.note.pop();
+	}
+}
+

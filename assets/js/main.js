@@ -26,18 +26,7 @@ $(document).ready(function(){
 			$('#connect').removeClass().addClass("cache");
 			$('#listnote').removeClass().addClass("visible");
 
-			$('#affichlistnote').children().remove();
-
-			for(var i=0;i<newUser.note.length;i++){
-
-				if (newUser.note[i]===null){
-					newUser.note.splice(i,1);
-					i--;
-				}
-				else{
-					$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
-				}
-			}
+			list();
 		}
 
 	}); //fin de fonction click
@@ -86,18 +75,7 @@ $(document).ready(function(){
 
 			newUser.newnote(curentnote);
 
-			$('#affichlistnote').children().remove();
-
-			for(var i=0;i<newUser.note.length;i++){
-
-							if (newUser.note[i]===null){
-								newUser.note.splice(i,1);
-								i--;
-							}
-							else{
-								$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
-							}
-						}
+			list();
 
 			$('#note').removeClass().addClass("cache");
 			$('#listnote').removeClass().addClass("visible");
@@ -112,18 +90,7 @@ $(document).ready(function(){
 				newUser.erasenote();
 			}
 
-			$('#affichlistnote').children().remove();
-
-			for(var i=0;i<newUser.note.length;i++){
-
-							if (newUser.note[i]===null){
-								newUser.note.splice(i,1);
-								i--;
-							}
-							else{
-								$('#affichlistnote').append("<li><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></li>");
-							}
-						}
+			list();
 
 			$('#note').removeClass().addClass("cache");
 			$('#listnote').removeClass().addClass("visible");
@@ -137,3 +104,20 @@ $(document).ready(function(){
 	});
 
 });//fin jquery
+
+
+
+function list (){
+	$('#affichlistnote').children().remove();
+
+	for(var i=0;i<newUser.note.length;i++){
+
+		if (newUser.note[i]===null){
+			newUser.note.splice(i,1);
+			i--;
+		}
+		else{
+			$('#affichlistnote').append("<li> <div class=\"bar\"><button class='notelist' id='"+i+"'>"+newUser.note[i][0]+"</button></div></li>");
+		}
+	}
+}
